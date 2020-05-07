@@ -6,8 +6,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/dgraph-io/badger/v2"
-	"github.com/dgraph-io/badger/v2/options"
+	"github.com/dgraph-io/badger"
+	"github.com/dgraph-io/badger/options"
 	"github.com/shirou/gopsutil/mem"
 
 	"github.com/gohornet/hornet/pkg/config"
@@ -194,14 +194,14 @@ var Profile8GB = &Profile{
 		MaxBfCacheSize:          50000,
 		LoadBloomsOnOpen:        false,
 		ZSTDCompressionLevel:    1,
-		CompressionType:         options.None,
-		ValueLogFileSize:        1073741823,
-		ValueLogMaxEntries:      33554431,
-		ValueThreshold:          32,
-		WithTruncate:            false,
-		LogRotatesToFlush:       2,
-		EventLogging:            false,
-		ValueLogGCDiscardRatio:  0.7,
+		//CompressionType:         options.None,
+		ValueLogFileSize:       1073741823,
+		ValueLogMaxEntries:     33554431,
+		ValueThreshold:         32,
+		WithTruncate:           false,
+		LogRotatesToFlush:      2,
+		EventLogging:           false,
+		ValueLogGCDiscardRatio: 0.7,
 	},
 }
 
@@ -318,14 +318,14 @@ var Profile4GB = &Profile{
 		MaxBfCacheSize:          25000,
 		LoadBloomsOnOpen:        false,
 		ZSTDCompressionLevel:    1,
-		CompressionType:         options.None,
-		ValueLogFileSize:        1073741823,
-		ValueLogMaxEntries:      33554431,
-		ValueThreshold:          32,
-		WithTruncate:            false,
-		LogRotatesToFlush:       2,
-		EventLogging:            false,
-		ValueLogGCDiscardRatio:  0.7,
+		//CompressionType:         options.None,
+		ValueLogFileSize:       1073741823,
+		ValueLogMaxEntries:     33554431,
+		ValueThreshold:         32,
+		WithTruncate:           false,
+		LogRotatesToFlush:      2,
+		EventLogging:           false,
+		ValueLogGCDiscardRatio: 0.7,
 	},
 }
 
@@ -442,14 +442,14 @@ var Profile2GB = &Profile{
 		MaxBfCacheSize:          10000,
 		LoadBloomsOnOpen:        false,
 		ZSTDCompressionLevel:    1,
-		CompressionType:         options.None,
-		ValueLogFileSize:        1073741823,
-		ValueLogMaxEntries:      33554431,
-		ValueThreshold:          32,
-		WithTruncate:            false,
-		LogRotatesToFlush:       2,
-		EventLogging:            false,
-		ValueLogGCDiscardRatio:  0.7,
+		//CompressionType:         options.None,
+		ValueLogFileSize:       1073741823,
+		ValueLogMaxEntries:     33554431,
+		ValueThreshold:         32,
+		WithTruncate:           false,
+		LogRotatesToFlush:      2,
+		EventLogging:           false,
+		ValueLogGCDiscardRatio: 0.7,
 	},
 }
 
@@ -566,14 +566,14 @@ var Profile1GB = &Profile{
 		MaxBfCacheSize:          5000,
 		LoadBloomsOnOpen:        false,
 		ZSTDCompressionLevel:    1,
-		CompressionType:         options.None,
-		ValueLogFileSize:        67108863,
-		ValueLogMaxEntries:      2097151,
-		ValueThreshold:          32,
-		WithTruncate:            false,
-		LogRotatesToFlush:       2,
-		EventLogging:            false,
-		ValueLogGCDiscardRatio:  0.7,
+		//CompressionType:         options.None,
+		ValueLogFileSize:       67108863,
+		ValueLogMaxEntries:     2097151,
+		ValueThreshold:         32,
+		WithTruncate:           false,
+		LogRotatesToFlush:      2,
+		EventLogging:           false,
+		ValueLogGCDiscardRatio: 0.7,
 	},
 }
 
@@ -630,13 +630,13 @@ type BadgerOpts struct {
 	LoadBloomsOnOpen        bool                    `mapstructure:"loadBloomsOnOpen"`
 	MaxBfCacheSize          int64                   `mapstructure:"maxBfCacheSize"`
 	ZSTDCompressionLevel    int                     `mapstructure:"ZSTDCompressionLevel"`
-	CompressionType         options.CompressionType `mapstructure:"CompressionType"`
-	ValueLogFileSize        int64                   `mapstructure:"valueLogFileSize"`
-	ValueLogMaxEntries      uint32                  `mapstructure:"valueLogMaxEntries"`
-	ValueThreshold          int                     `mapstructure:"valueThreshold"`
-	WithTruncate            bool                    `mapstructure:"withTruncate"`
-	LogRotatesToFlush       int32                   `mapstructure:"logRotatesToFlush"`
-	EventLogging            bool                    `mapstructure:"eventLogging"`
-	ValueLogGCDiscardRatio  float64                 `mapstructure:"valueLogGCDiscardRatio"`
-	Logger                  badger.Logger
+	//CompressionType         options.CompressionType `mapstructure:"CompressionType"`
+	ValueLogFileSize       int64   `mapstructure:"valueLogFileSize"`
+	ValueLogMaxEntries     uint32  `mapstructure:"valueLogMaxEntries"`
+	ValueThreshold         int     `mapstructure:"valueThreshold"`
+	WithTruncate           bool    `mapstructure:"withTruncate"`
+	LogRotatesToFlush      int32   `mapstructure:"logRotatesToFlush"`
+	EventLogging           bool    `mapstructure:"eventLogging"`
+	ValueLogGCDiscardRatio float64 `mapstructure:"valueLogGCDiscardRatio"`
+	Logger                 badger.Logger
 }

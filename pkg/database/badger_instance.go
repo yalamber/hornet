@@ -4,7 +4,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/dgraph-io/badger/v2"
+	"github.com/dgraph-io/badger"
 
 	"github.com/iotaledger/hive.go/database"
 
@@ -60,18 +60,10 @@ func GetHornetBadgerInstance() *badger.DB {
 			WithNumLevelZeroTables(badgerOpts.NumLevelZeroTables).
 			WithNumLevelZeroTablesStall(badgerOpts.NumLevelZeroTablesStall).
 			WithNumMemtables(badgerOpts.NumMemtables).
-			WithBloomFalsePositive(badgerOpts.BloomFalsePositive).
-			WithBlockSize(badgerOpts.BlockSize).
 			WithSyncWrites(badgerOpts.SyncWrites).
 			WithNumVersionsToKeep(badgerOpts.NumVersionsToKeep).
 			WithCompactL0OnClose(badgerOpts.CompactLevel0OnClose).
-			WithKeepL0InMemory(badgerOpts.KeepL0InMemory).
 			WithVerifyValueChecksum(badgerOpts.VerifyValueChecksum).
-			WithMaxCacheSize(badgerOpts.MaxCacheSize).
-			WithMaxBfCacheSize(badgerOpts.MaxBfCacheSize).
-			WithLoadBloomsOnOpen(badgerOpts.LoadBloomsOnOpen).
-			WithZSTDCompressionLevel(badgerOpts.ZSTDCompressionLevel).
-			WithCompression(badgerOpts.CompressionType).
 			WithValueLogFileSize(badgerOpts.ValueLogFileSize).
 			WithValueLogMaxEntries(badgerOpts.ValueLogMaxEntries).
 			WithValueThreshold(badgerOpts.ValueThreshold).

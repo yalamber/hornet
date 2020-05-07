@@ -2,11 +2,12 @@ module github.com/gohornet/hornet
 
 go 1.14
 
-replace github.com/dgraph-io/badger/v2 v2.0.1 => github.com/muXxer/badger/v2 v2.0.3-hotfix
+replace github.com/iotaledger/hive.go => github.com/alexsporn/hive.go v0.0.0-20200507221306-616399da5d75
 
 require (
+	github.com/DataDog/zstd v1.4.1 // indirect
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d // indirect
-	github.com/dgraph-io/badger/v2 v2.0.1
+	github.com/dgraph-io/badger v1.6.1
 	github.com/dustin/go-humanize v1.0.0
 	github.com/eclipse/paho.mqtt.golang v1.2.1-0.20200121105743-0d940dd29fd2
 	github.com/fhmq/hmq v0.0.0-20200416060851-3cf90d5231d2
