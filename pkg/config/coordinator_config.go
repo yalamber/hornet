@@ -32,6 +32,5 @@ func init() {
 	NodeConfig.SetDefault(CfgCoordinatorMerkleTreeFilePath, "coordinator.tree")
 	NodeConfig.SetDefault(CfgCoordinatorIntervalSeconds, 60)
 	NodeConfig.SetDefault(CfgCoordinatorCheckpointTransactions, 5)
-	NodeConfig.SetDefault(CfgCoordinatorCheckpointTransactions, 5)
 	NodeConfig.SetDefault(CfgCoordinatorWhiteFlag, true)
 }
