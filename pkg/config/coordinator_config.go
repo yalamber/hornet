@@ -18,6 +18,9 @@ const (
 	CfgCoordinatorIntervalSeconds = "coordinator.intervalSeconds"
 	// the amount of checkpoints issued between two milestones
 	CfgCoordinatorCheckpointTransactions = "coordinator.checkpointTransactions"
+	// CfgCoordinatorWhiteFlag instructs the coordinator to include the merkle tree root hash
+	// of the tail transactions which were confirmed via the white-flag approach into the milestone bundle.
+	CfgCoordinatorWhiteFlag = "coordinator.whiteFlag"
 )
 
 func init() {
@@ -29,4 +32,6 @@ func init() {
 	NodeConfig.SetDefault(CfgCoordinatorMerkleTreeFilePath, "coordinator.tree")
 	NodeConfig.SetDefault(CfgCoordinatorIntervalSeconds, 60)
 	NodeConfig.SetDefault(CfgCoordinatorCheckpointTransactions, 5)
+	NodeConfig.SetDefault(CfgCoordinatorCheckpointTransactions, 5)
+	NodeConfig.SetDefault(CfgCoordinatorWhiteFlag, true)
 }
